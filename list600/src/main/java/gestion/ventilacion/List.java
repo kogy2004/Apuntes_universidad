@@ -11,18 +11,19 @@ public class List {
         Node aux = head;
         while (aux != null && eq.getCode().compareTo(aux.getData().getCode()) > 0) {
             aux = aux.getLink();
-            if (aux == null) {
-                addLast(eq);
-            } else {
-                Node pre = previous(aux);
+        }
+        if (aux == null) {
+            addLast(eq);
+        } else {
+            Node pre = previous(aux);
 
-                if (pre == null) {
-                    addFirst(eq);
-                } else {
-                    Node n = new Node(eq);
-                    n.setLink(aux);
-                    pre.setLink(n);
-                }
+            if (pre == null) {
+                addFirst(eq);
+            } else {
+                Node n = new Node(eq);
+                n.setLink(aux);
+                pre.setLink(n);
+
             }
         }
     }
@@ -31,14 +32,11 @@ public class List {
         Node aux = head;
         while (aux != null && !aux.getData().getCode().equals(code)) {
             aux = aux.getLink();
-            if (aux != null) {
-                return aux.getData();
-            }
+        }
+        if (aux != null) {
+            return aux.getData();
         }
         return null;
-    }
-
-    public void subList(String location) {
 
     }
 
@@ -168,13 +166,40 @@ public class List {
         return count;
     }
 
+    public List subList(String location) {
+        List n = new List();
+        Node aux = head;
+        while (aux != null) {
+            if (aux.getData().getLocation().contains(location)) {
+                n.add(aux.getData());
+            }
+            aux = aux.getLink();
+        }
+        return n;
+    }
+
+    public void DeleteBad() {
+        Node aux = head;
+        while (aux != null) {
+            if (aux.getData().getState().equalsIgnoreCase("Bad")) {
+                Node pre = previous(aux);
+                if (pre == null) {
+                    deleteFirst();
+                } else {
+                    pre.setLink(aux.getLink());
+                }
+            }
+            aux = aux.getLink();
+        }
+    }
+
     @Override
     public String toString() {
         String text = " ";
         Node aux = head;
 
         while (aux != null) {
-            text = text + aux.getData() + " - ";
+            text = text + " - " + aux.getData();
             aux = aux.getLink();
         }
 

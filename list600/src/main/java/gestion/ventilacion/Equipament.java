@@ -68,6 +68,6 @@ public class Equipament {
 
     @Override
     public String toString() {
-        return "Equipament{" + "code=" + code + ", description=" + description + ", location=" + location + ", state=" + state + ", type=" + type + ", brand=" + brand + '}';
+        return "code: " + code + ", description: " + description + ", location: " + location + ", state: " + state + ", type: " + type + ", brand: " + brand +"\n";
     }
 }

@@ -11,7 +11,6 @@ public class Main {
         String option, code, description, location, state, type, brand;
 
         do {
-
             option = (String) JOptionPane.showInputDialog(null, "Selected", "Main", 1, null, menu, menu[0]);
 
             switch (option) {
@@ -28,7 +27,7 @@ public class Main {
 
                     list.add(eq);
 
-                    JOptionPane.showMessageDialog(null, "Equipment created");
+                    JOptionPane.showMessageDialog(null, "Equipment created \n" + eq.toString());
                 }
                 case "Search equipament" -> {
                     code = JOptionPane.showInputDialog("Enter code");
@@ -37,9 +36,48 @@ public class Main {
                         JOptionPane.showMessageDialog(null, eq.toString());
                     } else {
                         JOptionPane.showMessageDialog(null, "Equipament not found");
-
                     }
                 }
+
+                case "Update location" -> {
+                    code = JOptionPane.showInputDialog("Enter code");
+                    Equipament eq = list.search(code);
+                    if (eq != null) {
+                        location = JOptionPane.showInputDialog("Enter new location ");
+                        eq.setLocation(location);
+                        JOptionPane.showMessageDialog(null, "Equipment update");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Equipment not found");
+                    }
+                }
+
+                case "Update state" -> {
+                    code = JOptionPane.showInputDialog("Enter code");
+                    Equipament eq = list.search(code);
+                    if (eq != null) {
+                        state = JOptionPane.showInputDialog(null, "enter new state");
+                        eq.setState(state);
+                        if (state.equalsIgnoreCase("under repair")) {
+                            eq.setLocation("Workshop");
+                        }
+                        JOptionPane.showMessageDialog(null, "equipment update");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Equipment not found");
+                    }
+                }
+
+                case "Sub list" -> {
+                    location = JOptionPane.showInputDialog("Enter location");
+                    List sub = list.subList(location);
+                    JOptionPane.showMessageDialog(null, sub.toString());
+
+                }
+
+                case "Delete" -> {
+                    list.DeleteBad();
+                    JOptionPane.showMessageDialog(null, "List debug");
+                }
+
                 case "toString" -> {
                     JOptionPane.showMessageDialog(null, list.toString());
                 }
