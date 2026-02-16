@@ -1,6 +1,7 @@
 package com.mycompany.list600;
 
 public class Node {
+
     private Object data;
     private Node link;
 
@@ -23,7 +24,4 @@ public class Node {
     public void setLink(Node link) {
         this.link = link;
     }
-    
-    
-    
 }
