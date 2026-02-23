@@ -68,12 +68,28 @@ La clave está en la interdependencia, el objetivo compartido y la colaboración
 
 #### Diferencia entre verificacion y validacion
 
-|   Aspecto        |   Verificación                      | Validación                                    |
-|   ----           |   ----                              | ----                                          |
-|   Objetivo       |   ¿Se construye bien?               | ¿Se construye lo correcto?                    |
-|   Tipo de prueba |   Estática (sin ejecución)          | Dinámica (con ejecución)                      |
-|   Momento        |   Fases tempranas del desarrollo    | Fases finales del desarrollo                  |
-|   Métodos        |   Revisiones, inspecciones, análisis| Pruebas de caja negra, pruebas de aceptación  |
-|   Enfoque        |   Cumplimiento de especificaciones  | Satisfacción de necesidades del cliente       |
+|Aspecto        |Verificación                       |Validación                                   |
+|----           |----                               |----                                         |
+|Objetivo       |¿Se construye bien?                |¿Se construye lo correcto?                   |
+|Tipo de prueba |Estática (sin ejecución)           |Dinámica (con ejecución)                     |
+|Momento        |Fases tempranas del desarrollo     |Fases finales del desarrollo                 |
+|Métodos        |Revisiones, inspecciones, análisis |Pruebas de caja negra, pruebas de aceptación |
+|Enfoque        |Cumplimiento de especificaciones   |Satisfacción de necesidades del cliente      |
 
 ## Semana 3
+
+23/02/2024
+
+### tipos de metodologias
+
+Tradicionales (cascada, V, espiral)
+  
+- Cascada: secuencial, cada fase termina antes de la siguiente, difícil de adaptar a cambios.
+  
+- Modelo espiral: iterativo, permite revisiones y ajustes, pero puede ser complejo de gestionar.
+  
+- Modelo en V: similar a cascada pero con pruebas integradas, difícil de adaptar a cambios.
+
+Agiles (Scrum, Kanban, XP)
+
+Enfoque agil: iterativo, colaborativo, flexible, adaptativo a cambios, entrega continua de valor.
