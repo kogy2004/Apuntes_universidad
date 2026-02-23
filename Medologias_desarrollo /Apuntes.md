@@ -78,7 +78,7 @@ La clave está en la interdependencia, el objetivo compartido y la colaboración
 
 ## Semana 3
 
-23/02/2024
+> 23/02/2024
 
 ### tipos de metodologias
 
@@ -92,4 +92,14 @@ Tradicionales (cascada, V, espiral)
 
 Agiles (Scrum, Kanban, XP)
 
-Enfoque agil: iterativo, colaborativo, flexible, adaptativo a cambios, entrega continua de valor.
+> Enfoque agil: iterativo, colaborativo, flexible, adaptativo a cambios, entrega continua de valor.
+
+- Scrum: roles definidos (Scrum Master, Product Owner, Equipo), sprints de 2-4 semanas, reuniones diarias (Daily Scrum), revisión y retrospectiva al final de cada sprint.
+
+> :warning: **Warning:** Do not push the big red button.
+>
+> :memo: **Note:** Sunrises are beautiful.
+>
+> :bulb: **Tip:** Remember to appreciate the little things in life.
+>
+> **DevOps**: integración continua, entrega continua, colaboración entre desarrollo y operaciones, automatización de procesos, monitoreo y feedback constante.
