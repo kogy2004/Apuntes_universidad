@@ -1,171 +1,132 @@
----
 title: "Apuntes"
 ---
 
+## Índice
+
+- [Semana 1](#semana-1)
+- [Semana 2](#semana-2)
+- [Semana 3](#semana-3)
+- [Semana 4](#semana-4)
+- [Semana 5](#semana-5)
+- [SSADM y MERISE](#ssadm-y-merise)
+- [Herramientas y recursos](#herramientas-y-recursos)
+
+
 ## Semana 1
 
-### Tareas - Semana 1
+### Objetivos
+- Entender el ciclo de vida del software y sus fases principales.
+- Identificar entregables y responsabilidades en cada fase.
 
 ### ¿Qué es el ciclo de vida del software?
+El ciclo de vida del software es la secuencia de fases ordenadas y repetibles que se siguen para planificar, construir, verificar, desplegar y mantener un sistema. Su objetivo es mitigar riesgos, mejorar la calidad y facilitar la gestión del proyecto.
 
-El ciclo de vida del software es el conjunto de pasos ordenados y repetibles que se siguen para crear, entregar y mantener un programa. Piensa en ello como una receta: cada paso tiene una meta (qué entregar) y actividades concretas para pasar al siguiente. Su objetivo es reducir errores, controlar el proyecto y asegurar que el software sirva a los usuarios.
+### Fases típicas
+1. **Requisitos:** identificar necesidades del cliente y del usuario. Entregables: documento de requisitos funcionales y no funcionales, historias de usuario.
+2. **Análisis / Especificación:** modelado de requisitos (casos de uso, DFD, modelos conceptuales). Entregables: especificación detallada y diagramas.
+3. **Diseño:** arquitectura y diseño de módulos e interfaces. Entregables: diagramas de arquitectura, esquemas de base de datos.
+4. **Implementación:** desarrollo del código y pruebas unitarias. Entregables: código fuente y tests.
+5. **Pruebas:** verificación y validación (unitarias, integración, sistema, aceptación). Entregables: informes de pruebas y plan de corrección.
+6. **Despliegue:** entrega a producción, configuración y puesta en marcha. Entregables: scripts de despliegue y manuales.
+7. **Mantenimiento:** corrección de errores, mejoras y adaptación a cambios. Entregables: parches y nuevas versiones.
 
-### Fases típicas (básicas)
-
-#### Requisitos
-
-Qué necesita el cliente/usuario.
-Entregables: especificación de requisitos funcionales y no funcionales.
-
-#### Análisis (Analistas) / especificación
-
-Entender y modelar esos requisitos (casos de uso, diagramas).
-Entregables: documentos de análisis, modelos de datos.
-
-proceso-> cotizacion
-
-salida -> prototipos
-
-#### Diseño
-
-Arquitectura y diseño detallado (componentes, interfaces, base de datos).
-Entregables: diagramas de arquitectura, diseño de módulos.
-
-#### Implementación (codificación)
-
-Programar el sistema siguiendo el diseño.
-Entregables: código fuente, documentación técnica.
-
-#### Pruebas (testing)
-
-Verificar que el software cumple requisitos y no tiene errores (unitarias, integración, sistema, aceptación).
-Entregables: informes de pruebas, corrección de bugs.
-
-#### Despliegue (deploy)
-
-Poner el software en producción o entregarlo a los usuarios.
-Entregables: instaladores, configuraciones, manuales de usuario.
-
-#### Mantenimiento
-
-Corrección de errores, mejoras, adaptación a cambios.
-Entregables: versiones nuevas, parches, documentación actualizada.
 
 ## Semana 2
 
-### Tareas - Semana 2
+### Diferencia entre requerimiento y requisito
+- **Requerimiento:** necesidad o problema que debe resolverse (qué se necesita). Ejemplo: "El sistema debe permitir gestionar usuarios".
+- **Requisito:** condición específica y verificable que cumple un requerimiento (cómo se cumple). Ejemplo: "El sistema permitirá crear usuarios con correo válido y contraseña de al menos 8 caracteres".
 
-#### Diferencia entre requisito y requerimiento
+### Diferencia entre grupo y equipo
+- **Grupo:** colección de personas con objetivos individuales.
+- **Equipo:** grupo con objetivo común, roles definidos e interdependencia.
 
-Requerimiento = ¿Qué se necesita? (necesidad general).
+### Verificación vs Validación
+| Aspecto | Verificación | Validación |
+|---|---|---|
+| Objetivo | ¿Se construye correctamente? | ¿Se construye lo correcto para el usuario? |
+| Tipo | Estática (revisiones, análisis) | Dinámica (pruebas con ejecución) |
+| Momento | Fases tempranas y continuas | Fases finales y aceptación |
+| Ejemplos | Revisiones de requisitos, análisis estático | Pruebas de aceptación, pruebas de usuario |
 
-Requisito = ¿Cómo se cumple? (condición específica o detalle técnico).
-
-#### Diferencia entre grupo y equipo
-
-En resumen, todo equipo es un grupo, pero no todo grupo es un equipo.  
-La clave está en la interdependencia, el objetivo compartido y la colaboración activa.
-
-#### Diferencia entre verificacion y validacion
-
-| Aspecto        | Verificación                       | Validación                                   |
-| -------------- | ---------------------------------- | -------------------------------------------- |
-| Objetivo       | ¿Se construye bien?                | ¿Se construye lo correcto?                   |
-| Tipo de prueba | Estática (sin ejecución)           | Dinámica (con ejecución)                     |
-| Momento        | Fases tempranas del desarrollo     | Fases finales del desarrollo                 |
-| Métodos        | Revisiones, inspecciones, análisis | Pruebas de caja negra, pruebas de aceptación |
-| Enfoque        | Cumplimiento de especificaciones   | Satisfacción de necesidades del cliente      |
 
 ## Semana 3
 
-> 23/02/2024
+**Fecha:** 23/02/2024
 
-### tipos de metodologias
+### Tipos de metodologías
 
-Tradicionales (cascada, V, espiral)
+- **Tradicionales:** Cascada, V, Espiral. Enfocadas en fases secuenciales o iterativas con planificación extensa.
+	- *Cascada:* flujo secuencial; adecuado cuando los requisitos son estables.
+	- *Modelo en V:* destaca la trazabilidad entre fases y pruebas.
+	- *Espiral:* iterativo con énfasis en gestión de riesgos.
 
-- Cascada: secuencial, cada fase termina antes de la siguiente, difícil de adaptar a cambios.
-- Modelo espiral: iterativo, permite revisiones y ajustes, pero puede ser complejo de gestionar.
-- Modelo en V: similar a cascada pero con pruebas integradas, difícil de adaptar a cambios.
+- **Ágiles:** Scrum, Kanban, XP. Enfoque iterativo y adaptativo, con entregas frecuentes.
+	- *Scrum:* roles (Product Owner, Scrum Master, Equipo), sprints de 2–4 semanas, ceremonies (Daily, Review, Retrospective).
+	- *Kanban:* flujo continuo y límites WIP para optimizar el trabajo en curso.
+	- *XP:* prácticas de ingeniería (TDD, pair programming, integración continua).
 
-Agiles (Scrum, Kanban, XP)
+### Comparativa rápida
+- **Riesgo al cambio:** Tradicionales = mayor coste de cambios tardíos; Ágiles = menor coste por iteraciones.
+- **Documentación:** Tradicionales requieren más documentación formal; Ágiles priorizan la comunicación directa y la documentación mínima necesaria.
 
-> Enfoque agil: iterativo, colaborativo, flexible, adaptativo a cambios, entrega continua de valor.
-
-- Scrum: roles definidos (Scrum Master, Product Owner, Equipo), sprints de 2-4 semanas, reuniones diarias (Daily Scrum), revisión y retrospectiva al final de cada sprint.
-
----
 
 ## Semana 4
 
 ### Preguntas iniciales
+1. Si tuvieras que construir un rascacielos, ¿empezarías a poner ladrillos hoy o dedicarías meses solo a los planos?
+2. En el desarrollo de software, ¿qué pesa más: la velocidad de entrega o la documentación detallada de cada proceso?
+3. ¿Has escuchado el término "metodologías pesadas"? ¿Qué te viene a la mente?
 
-1. si tuvieras que construir un rascacielos, ¿empecarias a poner ladrillos hoy o dedicarias meses solo a los planos?
-2. En el desarrollo de software, ¿que creen que pesa mas: la velocidad de entrega o la documentacion detallada de cada proceso?
-3. ¿Han escuchado el termino "Metodologias pesadas"?¿Que se les viene a la mente con esa palabra?
 
-### Metodologia SSADM
+## SSADM y MERISE
 
-Structured Systems Analysis and Design Methodology
+### SSADM (Structured Systems Analysis and Design Method)
+- **Origen:** Reino Unido.
+- **Enfoque:** metodológico y estructurado para el análisis y diseño de sistemas.
+- **Fases:** planificación, estudio de viabilidad, análisis, diseño lógico, diseño físico, implementación y pruebas.
+- **Técnicas:** DFD (diagramas de flujo de datos), modelos ER, ELH (Entity Life Histories).
 
-Enfoque estructurado para el análisis y diseño de sistemas
+### MERISE
+- **Origen:** Francia (años 70–80).
+- **Enfoque:** modelado por niveles de abstracción (conceptual, lógico, físico).
+- **Niveles:**
+	- *Conceptual:* Modelo Conceptual de Datos (MCD), definición de entidades y relaciones.
+	- *Lógico/Organizativo:* Modelo Lógico de Datos (MLD), reglas y normalización.
+	- *Físico:* MPD, detalles de implementación en la base de datos.
 
-Fases: planificación, análisis, diseño lógico, diseño físico, implementación
+### Diferencias clave
+- **Enfoque:** SSADM = más prescriptivo y estructurado; MERISE = separación clara entre niveles Conceptual/ Lógico/ Físico.
+- **Modelado:** SSADM usa DFD y ELH; MERISE usa MCD/MLD/MPD.
 
-- Planificación: definir objetivos, alcance, recursos, cronograma
-- Análisis: recopilar y analizar requisitos, modelar procesos y datos
-- Diseño lógico: definir la arquitectura del sistema, componentes y interfaces
-- Diseño físico: especificar detalles técnicos, hardware, software
-- Implementación: codificación, pruebas, despliegue
+### Recomendación
+- Añadir ejemplos prácticos (mini-DFD y MCD) y enlaces a herramientas de modelado (draw.io, diagrams.net).
 
-Documentación detallada en cada fase
 
-**Tecnicas principales de SSADM:**
+## Semana 5
 
-LDS (Logical Data Structure): modelado de datos, entidades, relaciones, atributos.
+### ¿Qué son las herramientas de procesos?
+Son plataformas que facilitan la gestión, seguimiento y automatización de tareas y flujos de trabajo en una organización.
 
-DFD (Data Flow Diagrams): modelado de procesos, flujos de datos, transformaciones.
+### Criterios para elegir una herramienta
+- Tamaño del equipo y distribución geográfica.
+- Necesidad de integración con CI/CD y repositorios.
+- Coste y curva de adopción.
 
-ER (Entity-Relationship Diagrams): modelado de datos, entidades, relaciones.
+### Herramientas recomendadas
+- **Jira:** gestión ágil a escala y seguimiento de sprints.
+- **Trello:** tableros Kanban simples para equipos pequeños.
+- **Asana:** gestión de proyectos con dependencias.
+- **Microsoft Project:** planificación detallada con diagramas de Gantt.
+- **GitHub/GitLab Issues + CI:** integración con repositorios y automatización.
 
-ELH (Entity Life Histories): modelado de eventos y estados de entidades a lo largo del tiempo.
+### Buenas prácticas
+- Definir workflows antes de configurar la herramienta.
+- Automatizar integraciones y notificaciones.
+- Documentar convenciones y capacitar al equipo.
 
-### Metodologia MERISE (Model-based, Iterative, Risk-driven Software Engineering)
 
-**Filosofia de merise**
+## Herramientas y recursos
+- [Tutorial Markdown](https://tutorialmarkdown.com/lenguajes)
 
-origen: Francia, años 70, para proyectos de sistemas de información
-
-prinpales fundamentos - enfoque basado en modelos: uso de modelos para representar requisitos, diseño y arquitectura
-
-**El ciclo de abstraccion de merise**
-
-- nivel conceptual: ¿Que se hace? modelado de requisitos, procesos y datos sin detalles técnicos
-- Nivel lógico/organizativo: ¿Como se hace? diseño de la arquitectura, componentes y interfaces sin detalles de implementación
-
-**Los modelos de datos en merise**
-
-- MCD (Modelo Conceptual de Datos): modelado de entidades, relaciones y atributos a nivel conceptual
-- MLD (Modelo Lógico de Datos): modelado de datos a nivel lógico, tablas, claves, relaciones
-- MPD (Modelo Fisico de Datos): modelado de datos a nivel físico, estructuras de almacenamiento, índices
-
-**Resumen de diferencias entre SSADM y MERISE:**
-
-| Aspecto          | SSADM                                                                 | MERISE                                      |
-| ---------------- | --------------------------------------------------------------------- | ------------------------------------------- |
-| Enfoque          | Estructurado                                                          | Basado en modelos                           |
-| Fases            | Planificación, análisis, diseño lógico, diseño físico, implementación | Nivel conceptual, nivel lógico/organizativo |
-| Modelos de datos | LDS, DFD, ER, ELH                                                     | MCD, MLD, MPD                               |
-
-[Lenguajes basados en Markdown](https://tutorialmarkdown.com/lenguajes)
-
-<!--
-> :warning: **Warning:** Do not push the big red button.
->
-> :memo: **Note:** Sunrises are beautiful.
->
-> :bulb: **Tip:** Remember to appreciate the little things in life.
->
-> **DevOps**: integración continua, entrega continua, colaboración entre desarrollo y operaciones, automatización de procesos, monitoreo y feedback constante.
---!>
 
