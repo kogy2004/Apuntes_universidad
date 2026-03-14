@@ -108,3 +108,37 @@ la informacion que se almacena en esta area consiste en:
       escritura de la traza (LGWR): se encarga de escribir los cambios realizados en la base de datos en los archivos de redo log para garantizar la durabilidad de las transacciones.
 
       punto de sincronización (CKPT): se encarga de marcar un punto de sincronización en la base de datos, lo que permite una recuperación más rápida en caso de fallos o interrupciones.
+
+## Unidad 3 - instalacion de oracle
+
+usuarios os 
+
+oracle -> contaseña: oracle
+root -> contaseña: 
+
+
+windows -> carpetas
+linux -> filesystem
+
+### comandos basicos de linux
+
+df -h -> muestra el espacio disponible en el sistema de archivos
+cd -> cambia el directorio actual
+pwd -> muestra el directorio actual
+ls -> lista los archivos y directorios en el directorio actual
+ls -ltr -> lista los archivos y directorios en el directorio actual, ordenados por fecha de modificación
+
+./ -> ejecuta un archivo en el directorio actual
+
+clear -> limpia la pantalla
+
+### cargar profile
+
+. ./.bash_profile -> ejecuta el archivo .bash_profile en el directorio actual, lo que puede configurar variables de entorno y otras configuraciones para la sesión actual.
+
+dbca -> Database Configuration Assistant, es una herramienta gráfica que se utiliza para crear y configurar bases de datos Oracle.
+
+
+
+
+/u01/app/oracle/product/12.1.0/db_1/root.sh
