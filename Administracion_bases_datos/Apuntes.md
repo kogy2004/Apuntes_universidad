@@ -114,7 +114,8 @@ la informacion que se almacena en esta area consiste en:
 usuarios os 
 
 oracle -> contaseña: oracle
-root -> contaseña: 
+
+root -> contaseña: dios1234
 
 
 windows -> carpetas
@@ -122,23 +123,17 @@ linux -> filesystem
 
 ### comandos basicos de linux
 
-df -h -> muestra el espacio disponible en el sistema de archivos
-cd -> cambia el directorio actual
-pwd -> muestra el directorio actual
-ls -> lista los archivos y directorios en el directorio actual
-ls -ltr -> lista los archivos y directorios en el directorio actual, ordenados por fecha de modificación
-
-./ -> ejecuta un archivo en el directorio actual
-
-clear -> limpia la pantalla
+* df -h -> muestra el espacio disponible en el sistema de archivos
+* cd -> cambia el directorio actual
+* pwd -> muestra el directorio actual
+* ls -> lista los archivos y directorios en el directorio actual
+* ls -ltr -> lista los archivos y directorios en el directorio actual, ordenados por fecha de modificación
+* ./ -> ejecuta un archivo en el directorio actual
+* clear -> limpia la pantalla
 
 ### cargar profile
 
-. ./.bash_profile -> ejecuta el archivo .bash_profile en el directorio actual, lo que puede configurar variables de entorno y otras configuraciones para la sesión actual.
+* . ./.bash_profile -> ejecuta el archivo .bash_profile en el directorio actual, lo que puede configurar variables de entorno y otras configuraciones para la sesión actual.
+* dbca -> Database Configuration Assistant, es una herramienta gráfica que se utiliza para crear y configurar bases de datos Oracle.
 
-dbca -> Database Configuration Assistant, es una herramienta gráfica que se utiliza para crear y configurar bases de datos Oracle.
-
-
-
-
-/u01/app/oracle/product/12.1.0/db_1/root.sh
+> /u01/app/oracle/product/12.1.0/db_1/root.sh
