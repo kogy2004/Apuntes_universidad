@@ -111,12 +111,11 @@ la informacion que se almacena en esta area consiste en:
 
 ## Unidad 3 - instalacion de oracle
 
-usuarios os 
+usuarios os
 
 oracle -> contaseña: oracle
 
 root -> contaseña: dios1234
-
 
 windows -> carpetas
 linux -> filesystem
@@ -137,3 +136,127 @@ linux -> filesystem
 * dbca -> Database Configuration Assistant, es una herramienta gráfica que se utiliza para crear y configurar bases de datos Oracle.
 
 > /u01/app/oracle/product/12.1.0/db_1/root.sh
+
+<!-- clase 11/04 -->
+
+## unidad 5 - seguridad em ambientes Multi-usuario
+
+conceptos clave de seguridad en oracle:
+
+* **esquema**: contenedor logico de objetos de base de datos, como tablas, vistas, procedimientos almacenados, etc. Cada esquema pertenece a un usuario específico y se utiliza para organizar y gestionar los objetos de la base de datos.
+* **usuario**: es una cuenta que se utiliza para acceder a la base de datos. Cada usuario tiene un nombre de usuario y una contraseña, y puede tener diferentes privilegios y permisos para acceder a los objetos de la base de datos.
+* **Privilegios**: autenticacion para realizar acciones específicas en la base de datos.
+* **Rol**: conjunto predefinido de privilegios que se pueden asignar a los usuarios para facilitar la gestión de permisos en la base de datos.
+
+### definicion y caracteristicas de un esquema
+
+un esquema es un contenedor lógico de objetos de base de datos, como tablas, vistas, procedimientos almacenados, etc. Cada esquema pertenece a un usuario específico y se utiliza para organizar y gestionar los objetos de la base de datos.
+
+### definicion y caracteristicas de un usuario
+
+un usuario es una cuenta que se utiliza para acceder a la base de datos. Cada usuario tiene un nombre de usuario y una contraseña, y puede tener diferentes privilegios y permisos para acceder a los objetos de la base de datos.
+
+### definicion y caracteristicas de los privilegios
+
+los privilegios son permisos que se otorgan a los usuarios para realizar acciones específicas en la base de datos. Estos privilegios pueden ser otorgados a nivel de objeto (por ejemplo, una tabla específica) o a nivel de sistema (por ejemplo, la capacidad de crear nuevos usuarios).
+
+### definicion y caracteristicas de los roles
+
+un rol es un conjunto predefinido de privilegios que se pueden asignar a los usuarios para facilitar la gestión de permisos en la base de datos. Los roles permiten agrupar privilegios relacionados y asignarlos a los usuarios de manera más eficiente, en lugar de otorgar privilegios individuales a cada usuario.  
+
+### lista de chequeo de seguridad
+
+## comandos nece
+
+**encendido de la base de datos:**
+
+. ./.bash_profile  
+
+sqlplus / as sysdba
+
+> sqlplus </br> KOGY </br> *para iniciar directamente con un usuario*
+
+startup;
+
+**consultar los tablespace**
+
+select name from v$tablespace;
+
+**Crear usuario:**
+
+create user KOGY identified by 1234 </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+**Otros usuarios**
+
+create user ABD1 identified by ABD1 </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+create user ABD2 identified by ABD2 </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+create user ABD3 identified by ABD3 </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+**Asignar privilegios de iniciar a los usuarios:**
+
+grant create session to KOGY;
+
+grant create session to ABD1, ABD2, ABD3;
+
+**Asignar privilegios de crear tablas a los usuarios:**
+
+grant create table to KOGY;
+
+grant create table to ABD1;
+
+**crear una tabla:**
+
+create table Clientes (  </br>
+        Codigo_cliente number not null primary key,  </br>
+        Nombre_cliente varchar2(100) not null  </br>
+);
+
+**conectarse como un usuario:**
+
+conn KOGY
+
+*el passwor no se ve pero hay que ingresarla*
+
+**consulta el usuario actual:**
+
+show user;
+
+**Creacion de tabla con KOGY:**
+
+create table Materias (  </br>
+        Codigo_materia number not null primary key,  </br>
+        Nombre_materia varchar2(100) not null,  </br>
+        Profesor_materia varchar2(100) not null  </br>
+);
+
+**Creacion de tabla con ABD1:**
+
+create table viajes (  </br>
+        Codigo_viaje number not null primary key,  </br>
+        Lugar_partida varchar2(100) not null,  </br>
+        Lugar_destino varchar2(100) not null  </br>
+);
+
+create table Autos (  </br>
+        Matricula number not null primary key,  </br>
+        Modelo varchar2(100) not null,  </br>
+        Propietario varchar2(100) not null  </br>
+);
+
+**apagar la base de datos:**
+
+shutdown;
