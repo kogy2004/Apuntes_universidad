@@ -156,13 +156,9 @@ Cada fase de RUP tiene objetivos específicos y entregables asociados:
 ### Productos
 
 1. modelos de analisis: representan la estructura y comportamiento del sistema desde una perspectiva de análisis, utilizando diagramas UML como casos de uso, diagramas de clases y diagramas de secuencia.
-
-3. modelo de implementación: representa la estructura del sistema desde una perspectiva de implementación, utilizando diagramas de componentes y diagramas de despliegue.
-4. modelo de despliegue: representa la distribución física del sistema, incluyendo nodos y artefactos.
+2. modelo de implementación: representa la estructura del sistema desde una perspectiva de implementación, utilizando diagramas de componentes y diagramas de despliegue.
+3. modelo de despliegue: representa la distribución física del sistema, incluyendo nodos y artefactos.
 
 ### Metricas
- 
 
-## Herramientas y recursos
-
-- [Tutorial Markdown](https://tutorialmarkdown.com/lenguajes)
+RUP utiliza métricas para evaluar el progreso y la calidad del proyecto, como el número de casos de uso implementados, la cobertura de pruebas y la cantidad de defectos encontrados.
