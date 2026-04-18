@@ -166,7 +166,7 @@ un rol es un conjunto predefinido de privilegios que se pueden asignar a los usu
 
 ### lista de chequeo de seguridad
 
-## comandos nece
+## comandos necesarrios
 
 **encendido de la base de datos:**
 
@@ -218,6 +218,17 @@ grant create table to KOGY;
 
 grant create table to ABD1;
 
+**Asignar privilegios de consultar tablas a los usuarios:**
+
+grant select on KOGY.MATERIAS to ABD3
+
+grant select on CLIENTES to KOGY;
+
+**Quitar privilegios a los usuarios:**
+
+revoke select on CLIENTES from KOGY;
+
+
 **crear una tabla:**
 
 create table Clientes (  </br>
@@ -229,7 +240,7 @@ create table Clientes (  </br>
 
 conn KOGY
 
-*el passwor no se ve pero hay que ingresarla*
+> *el passwor no se ve pero hay que ingresarla*
 
 **consulta el usuario actual:**
 
@@ -260,3 +271,75 @@ create table Autos (  </br>
 **apagar la base de datos:**
 
 shutdown;
+
+> 18/04/2026
+
+**insertar registros en las tablas:**
+
+desde cada usurio </br>
+INSERT into Materias values (1, 'Matematica', 'Profesor A');
+
+Desde sysdba </br>
+INSERT into KOGY.Materias values (2, 'Fisica', 'Profesor B');
+
+**insertar registros en la tabala Clientes:**
+
+INSERT into Clientes values (1, 'pepe');</br>
+INSERT into Clientes values (2, 'luis');</br>
+INSERT into Clientes values (3, 'fernando');</br>
+INSERT into Clientes values (4, 'luisa');</br>
+INSERT into Clientes values (5, 'pedro');
+
+**consultar cuantos registros hay en la tabla Clientes:**
+
+select count(*) from CLIENTES;</br>
+select * from CLIENTES;
+
+**insertar registros en las tablas de KOGY:**
+
+INSERT into KOGY.Materias values (1, 'Matematica', 'Profesor A');</br>
+INSERT into KOGY.Materias values (2, 'Fisica', 'Profesor B');</br>
+INSERT into KOGY.Materias values (3, 'Quimica', 'Profesor C');</br>
+insert into KOGY.Materias values (4, 'Biologia', 'Profesor D');</br>
+insert into KOGY.Materias values (5, 'Historia', 'Profesor E');
+
+SELECT table_name from all_tables WHERE owner = 'KOGY';
+
+**insertar registros en las tablas de ABD1:**
+
+insert into ABD1.viajes values (1, 'Buenos Aires', 'Cordoba');</br>
+insert into ABD1.viajes values (2, 'Rosario', 'Mendoza');</br>
+insert into ABD1.viajes values (3, 'La Plata', 'Salta');</br>
+insert into ABD1.viajes values (4, 'Mar del Plata', 'Tucuman');</br>
+insert into ABD1.viajes values (5, 'Santa Fe', 'Jujuy');
+
+insert into ABD1.Autos values (1, 'Ford Fiesta', 'Juan Perez');</br>
+insert into ABD1.Autos values (2, 'Chevrolet Onix', 'Maria Gomez');</br>
+insert into ABD1.Autos values (3, 'Volkswagen Gol', 'Carlos Rodriguez');</br>
+insert into ABD1.Autos values (4, 'Renault Clio', 'Ana Martinez');</br>
+insert into ABD1.Autos values (5, 'Toyota Corolla', 'Luis Fernandez');
+
+**borar un usuario:**
+
+DROP USER ABD2;</br>
+DROP USER KOGY;
+
+## Manejo de roles
+
+``` oracle
+crear un rol:
+        create role Rol_Consulta;
+
+aisgnar permisos a un rol:
+        grant select on ABD1.VIAJES to Rol_Consulta;
+        grant select on ABD1.AUTOS to Rol_Consulta;
+
+asignar el rol a un usuario:
+        grant Rol_Consulta to ABD3;
+```
+
+# Tarea
+
+conectar los 2 pcs por red
+
+* hamchi
