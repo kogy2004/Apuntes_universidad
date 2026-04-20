@@ -221,3 +221,9 @@ El Manifiesto Ágil y sus principios proporcionan un **_marco para el desarrollo
 ### ¿Que es el manifiesto agil?
 
 publicado en 2001 por un grupo de desarrolladores de software que buscaban una alternativa a los enfoques tradicionales de desarrollo, que a menudo eran rígidos y no respondían bien a los cambios. El manifiesto se basa en cuatro valores fundamentales y doce principios que guían la forma en que los equipos de desarrollo deben trabajar para crear software de alta calidad de manera eficiente y efectiva.
+
+### aplicaciones practicas del manifiesto agil
+
+- **sprint y interacciones:** en lugar de planificar todo el proyecto de una vez, los equipos ágiles trabajan en ciclos cortos llamados sprints, que suelen durar entre 1 y 4 semanas. Al final de cada sprint, se entrega un incremento funcional del software, lo que permite obtener feedback temprano y ajustar el rumbo según sea necesario.
+- **Reuniones diarias:** los equipos ágiles suelen tener reuniones diarias (daily stand-ups) para discutir el progreso, identificar obstáculos y coordinar el trabajo. Esto fomenta la comunicación y la colaboración entre los miembros del equipo.
+- **Feedback continuo:** el enfoque ágil enfatiza la importancia de obtener feedback temprano y frecuente de los clientes y usuarios finales. Esto permite a los equipos ajustar sus prioridades y asegurarse de que están construyendo algo que realmente satisface las necesidades del cliente.
