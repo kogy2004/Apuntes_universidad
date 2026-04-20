@@ -1,4 +1,4 @@
-## title: "Apuntes"
+# Apuntes
 
 ## Índice
 
@@ -8,7 +8,8 @@
 - [Semana 4](#semana-4)
 - [Semana 5](#semana-5)
 - [Semana 6](#semana-6)
-- [Herramientas y recursos](#herramientas-y-recursos)
+- [Semana 10](#semana-10)
+- [Semana 11](#semana-11)
 
 ## Semana 1
 
@@ -162,3 +163,61 @@ Cada fase de RUP tiene objetivos específicos y entregables asociados:
 ### Metricas
 
 RUP utiliza métricas para evaluar el progreso y la calidad del proyecto, como el número de casos de uso implementados, la cobertura de pruebas y la cantidad de defectos encontrados.
+
+## Semana 10
+
+### Metodología RUP — Métricas y Elementos de Análisis y Diseño
+
+#### ¿Qué es RUP?
+
+Rational Unified Process (RUP) es un marco de desarrollo de software iterativo e incremental, desarrollado por Rational Software (ahora IBM). Se basa en casos de uso, es centrado en la arquitectura y es iterativo por naturaleza.
+
+dimenciones del rup
+
+eje d tiempo (fases )
+eje de con
+
+## Semana 11
+
+### Manifiesto Agil
+
+- Individuos e interacciones sobre procesos y herramientas
+- Software funcionando sobre documentación extensiva
+- Colaboración con el cliente sobre negociación de contratos
+- Responder al cambio sobre seguir un plan
+
+### Principios del Manifiesto Ágil
+
+1. Nuestra mayor prioridad es **satisfacer al cliente** mediante la entrega temprana y continua de software valioso.
+2. Aceptamos que los requisitos cambien, incluso en etapas tardías del desarrollo. Los procesos ágiles **aprovechan el cambio** para proporcionar ventaja competitiva al cliente.
+3. **Entregamos software funcional con frecuencia**, desde un par de semanas hasta un par de meses, con preferencia a los períodos de tiempo más cortos.
+4. Los responsables de negocio y los desarrolladores deben **trabajar juntos de forma cotidiana** durante todo el proyecto.
+5. Construimos proyectos en torno a **individuos motivados**. Les damos el entorno y el apoyo que necesitan, y confiamos en ellos para hacer el trabajo.
+6. El método más eficiente y efectivo de comunicar información al equipo de desarrollo y entre sus miembros es mediante la **conversación cara a cara**.
+7. El **software funcionando** es la medida principal de progreso.
+8. Los procesos ágiles promueven el desarrollo sostenible. Los patrocinadores, desarrolladores y usuarios deben ser capaces de mantener un **ritmo constante** de forma indefinida.
+9. La **atención continua a la excelencia técnica** y al buen diseño mejora la agilidad.
+10. **La simplicidad**, o el arte de maximizar la cantidad de trabajo no realizado, es esencial.
+11. Las mejores arquitecturas, requisitos y diseños emergen de **equipos autoorganizados**.
+12. A intervalos regulares, el equipo reflexiona sobre cómo **ser más efectivo**, para luego ajustar su comportamiento en consecuencia.
+
+### beneficios del enfoque ágil
+
+- Mayor flexibilidad y adaptabilidad a cambios.
+- Entrega temprana y continua de valor al cliente.
+- Mejora de la comunicación y colaboración entre equipos y con el cliente.
+- Mayor satisfacción del cliente y del equipo.
+- Reducción de riesgos al identificar problemas temprano en el proceso.
+- Fomento de la innovación y creatividad al permitir iteraciones rápidas y feedback constante.
+- Mejora de la calidad del software al enfocarse en pruebas continuas y feedback temprano.
+- Mayor motivación y compromiso del equipo al trabajar en un entorno colaborativo y autoorganizado.
+- Mejora de la visibilidad del progreso del proyecto a través de entregas frecuentes y métricas ágiles.
+- Fomento de la mejora continua al reflexionar regularmente sobre el proceso y ajustar prácticas según sea necesario.
+
+### Conclusión
+
+El Manifiesto Ágil y sus principios proporcionan un **_marco para el desarrollo de software_** que enfatiza la colaboración, la flexibilidad y la entrega continua de valor. Adoptar un enfoque ágil puede mejorar significativamente la calidad del software, la satisfacción del cliente y la eficiencia del equipo, permitiendo a las organizaciones adaptarse rápidamente a los cambios y mantenerse competitivas en un entorno dinámico.
+
+### ¿Que es el manifiesto agil?
+
+publicado en 2001 por un grupo de desarrolladores de software que buscaban una alternativa a los enfoques tradicionales de desarrollo, que a menudo eran rígidos y no respondían bien a los cambios. El manifiesto se basa en cuatro valores fundamentales y doce principios que guían la forma en que los equipos de desarrollo deben trabajar para crear software de alta calidad de manera eficiente y efectiva.
