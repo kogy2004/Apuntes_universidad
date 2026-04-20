@@ -166,4 +166,80 @@ public class BinaryTree {
         return list;
     }
 
+    public boolean Delete(String value) {
+        //buscamos el elemento en el arbol
+        BinaryNode delete = SearchNode(value);
+        if (delete != null) {
+            //verificamos si es una hoja
+            if (delete.getLeft() == null && delete.getRight() == null) {
+                Delete0(delete);
+            } else {
+                //verificamos si tiene un hijo
+                if (delete.getLeft() == null || delete.getRight() == null) {
+                    Delete1(delete);
+                } else {
+                    Delete2(delete);
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private void Delete0(BinaryNode delete) {
+        BinaryNode father = getFather((String) delete.getData());
+        if (father == null) {
+            root = null;
+        } else {
+            if (father.getLeft() == delete) {
+                father.setLeft(null);
+            } else {
+                father.setRight(null);
+            }
+        }
+    }
+
+    private void Delete1(BinaryNode delete) {
+        BinaryNode father = getFather((String) delete.getData());
+        //si no tiene padre
+        if (father == null) {
+            if (delete.getLeft() != null) {
+                root = delete.getLeft();
+            } else {
+                root = delete.getRight();
+            }
+        } else //tiene padre
+        {
+            if (father.getLeft() == delete) {
+                //donde esta el hijo
+                if (delete.getLeft() != null) {
+                    father.setLeft(delete.getLeft());
+                } else {
+                    father.setLeft(delete.getRight());
+                }
+            } else {
+                if (delete.getLeft() != null) {
+                    father.setRight(delete.getLeft());
+                } else {
+                    father.setRight(delete.getRight());
+                }
+            }
+        }
+
+    }
+
+    private void Delete2(BinaryNode delete) {
+        BinaryNode left = MoreLeft(delete);
+        Delete((String) left.getData());
+        delete.setData(left.getData());
+    }
+
+    private BinaryNode MoreLeft(BinaryNode aux) {
+        if (aux.getLeft() != null) {
+            return MoreLeft(aux.getLeft());
+        }
+
+        return aux;
+    }
+
 }
