@@ -326,6 +326,7 @@ DROP USER KOGY;
 
 ## Manejo de roles
 
+
 ``` oracle
 crear un rol:
         create role Rol_Consulta;
@@ -343,3 +344,90 @@ asignar el rol a un usuario:
 conectar los 2 pcs por red
 
 * hamchi
+
+> 25/04/2026
+
+sqlplus / as sysdba
+shutdown;
+show user;
+
+DROP TABLE CLIENTES CASCADE CONSTRAINTS;
+
+create user ADMINBD identified by ADMINBD </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+create user ISAZA identified by ADMINBD </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+create user JARAMILLO identified by ADMINBD </br>
+default tablespace USERS </br>
+temporary tablespace TEMP </br>
+quota 2m on USERS;
+
+grant create session to ADMINBD, ISAZA, JARAMILLO;
+
+grant create table to ADMINBD, ISAZA;
+
+conn ADMINBD
+
+create table PRODUCTO (  </br>
+        Codigo_pcto number not null primary key,  </br>
+        Nombre_pcto varchar2(100) not null,  </br>
+        Precio number not null  </br>
+);
+
+insert into ADMINBD.PRODUCTO values (1, 'Banano', 1000);</br>
+insert into ADMINBD.PRODUCTO values (2, 'Manzana', 2000);</br>
+insert into ADMINBD.PRODUCTO values (3, 'Naranja', 1500);</br>
+insert into ADMINBD.PRODUCTO values (4, 'Pera', 2500);</br>
+insert into ADMINBD.PRODUCTO values (5, 'Uva', 3000);
+
+Conectado como Usuario 2, crear una tabla cuyo nombre sea su “primer nombre
+(nombre del estudiante)”. La tabla tendrá los siguientes campos:
+Carne_Est (numérico), Nombre_Est [varchar2(100)], Direccion_Est [varchar2(100)],
+Asignatura [varchar2(100)]
+
+conn ISAZA
+
+create table KOGY (  </br>
+        Carne_Est number not null primary key,  </br>
+        Nombre_Est varchar2(100) not null,  </br>
+        Direccion_Est varchar2(100) not null,  </br>
+        Asignatura varchar2(100) not null  </br>
+);
+
+insert into ISAZA.KOGY values (1, 'Pepe', 'calle_1', 'Estructura de datos');</br>
+insert into ISAZA.KOGY values (2, 'Luis', 'calle_2', 'Programacion');</br>
+insert into ISAZA.KOGY values (3, 'Maria', 'calle_3', 'Base de datos');</br>
+insert into ISAZA.KOGY values (4, 'Ana', 'calle_4', 'Redes');</br>
+insert into ISAZA.KOGY values (5, 'Carlos', 'calle_5', 'Sistemas operativos');
+
+grant select on ADMINBD.PRODUCTO to ISAZA;
+
+grant select on ISAZA.KOGY to ADMINBD;</br>
+grant insert, update on ISAZA.KOGY to ADMINBD;
+
+conn ADMINBD
+
+insert into ISAZA.KOGY values (6, 'Fernanda', 'calle_6', 'Inteligencia artificial');
+
+
+create role Kogy_consulta;
+
+grant select on ADMINBD.PRODUCTO to Kogy_consulta;
+grant select on ISAZA.KOGY to Kogy_consulta;
+
+grant Kogy_consulta to JARAMILLO;
+
+conn JARAMILLO
+
+select count(*) from ADMINBD.PRODUCTO;
+select count(*) from ISAZA.KOGY;
+
+revoke update on ISAZA.KOGY from ADMINBD;
+
+DROP TABLE ISAZA.KOGY CASCADE CONSTRAINTS;
