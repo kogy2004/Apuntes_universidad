@@ -7,7 +7,7 @@
 - [Semana 3](#semana-3)
 - [Semana 4](#semana-4)
 - [Semana 5](#semana-5)
-- [Semana 6](#semana-6)
+- [Semana 6 (RUP)](#semana-6-rup)
 - [Semana 10](#semana-10)
 - [Semana 11](#semana-11)
 
@@ -24,10 +24,10 @@ El ciclo de vida del software es la secuencia de fases ordenadas y repetibles qu
 
 ### Fases típicas
 
-1. **Requisitos:** identificar necesidades del cliente y del usuario. Entregables: documento de requisitos funcionales y no funcionales, historias de usuario.
+1. **Requisitos:** identificar necesidades del cliente y del usuario. Entregables: documento de requisitos (funcionales y no funcionales), historias de usuario.
 2. **Análisis / Especificación:** modelado de requisitos (casos de uso, DFD, modelos conceptuales). Entregables: especificación detallada y diagramas.
 3. **Diseño:** arquitectura y diseño de módulos e interfaces. Entregables: diagramas de arquitectura, esquemas de base de datos.
-4. **Implementación:** desarrollo del código y pruebas unitarias. Entregables: código fuente y tests.
+4. **Implementación:** desarrollo del código y pruebas unitarias. Entregables: código fuente y pruebas.
 5. **Pruebas:** verificación y validación (unitarias, integración, sistema, aceptación). Entregables: informes de pruebas y plan de corrección.
 6. **Despliegue:** entrega a producción, configuración y puesta en marcha. Entregables: scripts de despliegue y manuales.
 7. **Mantenimiento:** corrección de errores, mejoras y adaptación a cambios. Entregables: parches y nuevas versiones.
@@ -65,7 +65,7 @@ El ciclo de vida del software es la secuencia de fases ordenadas y repetibles qu
   - _Espiral:_ iterativo con énfasis en gestión de riesgos.
 
 - **Ágiles:** Scrum, Kanban, XP. Enfoque iterativo y adaptativo, con entregas frecuentes.
-  - _Scrum:_ roles (Product Owner, Scrum Master, Equipo), sprints de 2–4 semanas, ceremonies (Daily, Review, Retrospective).
+  - _Scrum:_ roles (Product Owner, Scrum Master, Equipo), sprints de 2–4 semanas, ceremonias (Daily, Review, Retrospective).
   - _Kanban:_ flujo continuo y límites WIP para optimizar el trabajo en curso.
   - _XP:_ prácticas de ingeniería (TDD, pair programming, integración continua).
 
@@ -102,12 +102,49 @@ El ciclo de vida del software es la secuencia de fases ordenadas y repetibles qu
 
 #### Diferencias clave
 
-- **Enfoque:** SSADM = más prescriptivo y estructurado; MERISE = separación clara entre niveles Conceptual/ Lógico/ Físico.
+- **Enfoque:** SSADM = más prescriptivo y estructurado; MERISE = separación clara entre niveles Conceptual / Lógico / Físico.
 - **Modelado:** SSADM usa DFD y ELH; MERISE usa MCD/MLD/MPD.
 
 #### Recomendación
 
 - Añadir ejemplos prácticos (mini-DFD y MCD) y enlaces a herramientas de modelado (draw.io, diagrams.net).
+
+### Ejemplos prácticos (mini-DFD y MCD)
+
+A continuación hay un ejemplo simple de DFD de contexto y un mini-modelo conceptual de datos (MCD) en formato Mermaid para visualizar rápidamente la idea.
+
+DFD (diagrama de contexto) — Mermaid flowchart:
+
+```mermaid
+flowchart LR
+  Usuario[Usuario]
+  WebApp[Aplicación Web]
+  Auth[Servicio de Autenticación]
+  DB[(Base de datos)]
+
+  Usuario -->|Solicita registro/login| WebApp
+  WebApp -->|Llama API| Auth
+  Auth -->|Consulta/actualiza| DB
+  WebApp -->|Lee/Escribe datos| DB
+```
+
+Mini MCD (Mermaid ER):
+
+```mermaid
+erDiagram
+  USUARIO {
+    string id PK
+    string nombre
+    string email
+  }
+  ROL {
+    string id PK
+    string nombre
+  }
+  USUARIO ||--o{ ROL : tiene
+```
+
+Estos fragmentos pueden pegarse en la vista previa Markdown de GitHub o en herramientas como diagrams.net (DFD) para obtener una representación gráfica.
 
 ## Semana 5
 
@@ -135,15 +172,15 @@ Son plataformas que facilitan la gestión, seguimiento y automatización de tare
 - Automatizar integraciones y notificaciones.
 - Documentar convenciones y capacitar al equipo.
 
-## Semana 6
+## Semana 6 (RUP)
 
-**Consulta:** hacer un mini proyecto de software en jira
+**Consulta:** hacer un mini proyecto de software en Jira
 
-### ¿Que es RUP?
+### ¿Qué es RUP?
 
 RUP (Rational Unified Process) es un marco de proceso de desarrollo de software iterativo e incremental desarrollado por Rational Software (ahora parte de IBM). RUP se basa en principios de ingeniería de software y proporciona una guía estructurada para gestionar el ciclo de vida del software, desde la concepción hasta la entrega y mantenimiento.
 
-RUP esta basado en UML (Unified Modeling Language) y se organiza en cuatro fases principales: Incepción, Elaboración, Construcción y Transición. Cada fase tiene objetivos específicos, entregables y actividades recomendadas.
+RUP está basado en UML (Unified Modeling Language) y se organiza en cuatro fases principales: Incepción, Elaboración, Construcción y Transición. Cada fase tiene objetivos específicos, entregables y actividades recomendadas.
 
 ### Fases de RUP
 
@@ -156,35 +193,30 @@ Cada fase de RUP tiene objetivos específicos y entregables asociados:
 
 ### Productos
 
-1. modelos de analisis: representan la estructura y comportamiento del sistema desde una perspectiva de análisis, utilizando diagramas UML como casos de uso, diagramas de clases y diagramas de secuencia.
-2. modelo de implementación: representa la estructura del sistema desde una perspectiva de implementación, utilizando diagramas de componentes y diagramas de despliegue.
-3. modelo de despliegue: representa la distribución física del sistema, incluyendo nodos y artefactos.
+1. **Modelos de análisis:** representan la estructura y comportamiento del sistema desde una perspectiva de análisis, utilizando diagramas UML como casos de uso, diagramas de clases y diagramas de secuencia.
+2. **Modelo de implementación:** representa la estructura del sistema desde una perspectiva de implementación, utilizando diagramas de componentes y diagramas de despliegue.
+3. **Modelo de despliegue:** representa la distribución física del sistema, incluyendo nodos y artefactos.
 
-### Metricas
+### Métricas
 
 RUP utiliza métricas para evaluar el progreso y la calidad del proyecto, como el número de casos de uso implementados, la cobertura de pruebas y la cantidad de defectos encontrados.
 
 ## Semana 10
 
-### Metodología RUP — Métricas y Elementos de Análisis y Diseño
+### Notas y recordatorios
 
-#### ¿Qué es RUP?
+Contenido relacionado con RUP consolidado en la sección "Semana 6 (RUP)". Aquí puedes añadir apuntes adicionales, ejemplos prácticos o ejercicios relacionados con métricas y análisis.
 
-Rational Unified Process (RUP) es un marco de desarrollo de software iterativo e incremental, desarrollado por Rational Software (ahora IBM). Se basa en casos de uso, es centrado en la arquitectura y es iterativo por naturaleza.
-
-dimenciones del rup
-
-eje d tiempo (fases )
-eje de con
+Ejemplo breve: Dimensiones del RUP — eje de tiempo (fases) y eje de contenido (artefactos y modelos).
 
 ## Semana 11
 
-### Manifiesto Agil
+### Manifiesto Ágil
 
-- Individuos e interacciones sobre procesos y herramientas
-- Software funcionando sobre documentación extensiva
-- Colaboración con el cliente sobre negociación de contratos
-- Responder al cambio sobre seguir un plan
+- Individuos e interacciones sobre procesos y herramientas.
+- Software funcionando sobre documentación extensiva.
+- Colaboración con el cliente sobre negociación de contratos.
+- Responder al cambio sobre seguir un plan.
 
 ### Principios del Manifiesto Ágil
 
@@ -201,7 +233,7 @@ eje de con
 11. Las mejores arquitecturas, requisitos y diseños emergen de **equipos autoorganizados**.
 12. A intervalos regulares, el equipo reflexiona sobre cómo **ser más efectivo**, para luego ajustar su comportamiento en consecuencia.
 
-### beneficios del enfoque ágil
+### Beneficios del enfoque ágil
 
 - Mayor flexibilidad y adaptabilidad a cambios.
 - Entrega temprana y continua de valor al cliente.
@@ -216,14 +248,77 @@ eje de con
 
 ### Conclusión
 
-El Manifiesto Ágil y sus principios proporcionan un **_marco para el desarrollo de software_** que enfatiza la colaboración, la flexibilidad y la entrega continua de valor. Adoptar un enfoque ágil puede mejorar significativamente la calidad del software, la satisfacción del cliente y la eficiencia del equipo, permitiendo a las organizaciones adaptarse rápidamente a los cambios y mantenerse competitivas en un entorno dinámico.
+El Manifiesto Ágil y sus principios proporcionan un marco para el desarrollo de software que enfatiza la colaboración, la flexibilidad y la entrega continua de valor. Adoptar un enfoque ágil puede mejorar significativamente la calidad del software, la satisfacción del cliente y la eficiencia del equipo, permitiendo a las organizaciones adaptarse rápidamente a los cambios y mantenerse competitivas en un entorno dinámico.
 
-### ¿Que es el manifiesto agil?
+### ¿Qué es el manifiesto ágil?
 
-publicado en 2001 por un grupo de desarrolladores de software que buscaban una alternativa a los enfoques tradicionales de desarrollo, que a menudo eran rígidos y no respondían bien a los cambios. El manifiesto se basa en cuatro valores fundamentales y doce principios que guían la forma en que los equipos de desarrollo deben trabajar para crear software de alta calidad de manera eficiente y efectiva.
+Publicado en 2001 por un grupo de desarrolladores de software que buscaban una alternativa a los enfoques tradicionales de desarrollo, que a menudo eran rígidos y no respondían bien a los cambios. El manifiesto se basa en cuatro valores fundamentales y doce principios que guían la forma en que los equipos de desarrollo deben trabajar para crear software de alta calidad de manera eficiente y efectiva.
 
-### aplicaciones practicas del manifiesto agil
+### Aplicaciones prácticas del manifiesto ágil
 
-- **sprint y interacciones:** en lugar de planificar todo el proyecto de una vez, los equipos ágiles trabajan en ciclos cortos llamados sprints, que suelen durar entre 1 y 4 semanas. Al final de cada sprint, se entrega un incremento funcional del software, lo que permite obtener feedback temprano y ajustar el rumbo según sea necesario.
+- **Sprints y iteraciones:** en lugar de planificar todo el proyecto de una vez, los equipos ágiles trabajan en ciclos cortos llamados sprints, que suelen durar entre 1 y 4 semanas. Al final de cada sprint, se entrega un incremento funcional del software, lo que permite obtener feedback temprano y ajustar el rumbo según sea necesario.
 - **Reuniones diarias:** los equipos ágiles suelen tener reuniones diarias (daily stand-ups) para discutir el progreso, identificar obstáculos y coordinar el trabajo. Esto fomenta la comunicación y la colaboración entre los miembros del equipo.
 - **Feedback continuo:** el enfoque ágil enfatiza la importancia de obtener feedback temprano y frecuente de los clientes y usuarios finales. Esto permite a los equipos ajustar sus prioridades y asegurarse de que están construyendo algo que realmente satisface las necesidades del cliente.
+
+## Ejercicio (plantilla)
+
+### Título
+Diseño de un sistema de gestión de usuarios: DFD, MCD y requisitos.
+
+### Objetivo
+Aplicar conceptos de análisis y diseño (DFD y MCD), identificar requisitos funcionales y no funcionales, y elaborar pruebas de aceptación básicas.
+
+### Enunciado
+Diseña un sistema que permita el registro y autenticación de usuarios, gestión de perfiles, asignación de roles y búsqueda básica de usuarios. Debes producir diagramas y documentación mínima que muestren la propuesta de solución.
+
+### Entregables
+- DFD de contexto (nivel 0) y DFD de nivel 1 (Mermaid o imagen).
+- Modelo conceptual de datos (MCD) y, opcionalmente, modelo lógico (MLD).
+- Lista de requisitos funcionales y no funcionales.
+- Plan de pruebas de aceptación con al menos 5 casos.
+
+### Pasos sugeridos
+1. Identificar actores y casos de uso principales.
+2. Dibujar el DFD de contexto y un DFD de nivel 1 con los procesos principales.
+3. Diseñar el MCD con las entidades `USUARIO`, `ROL` y relaciones.
+4. Enumerar requisitos funcionales (CRUD, autenticación, roles) y no funcionales (seguridad, rendimiento).
+5. Definir 5 pruebas de aceptación (registro, login, asignación de rol, edición de perfil, búsqueda).
+
+### Criterios de evaluación
+- Completitud de los entregables.
+- Claridad y legibilidad de diagramas.
+- Trazabilidad entre requisitos, casos de uso y diagramas.
+- Calidad de los casos de prueba (claros y reproducibles).
+
+### Plantillas rápidas (Mermaid)
+
+DFD contexto:
+
+```mermaid
+flowchart LR
+  Usuario --> Aplicacion[Aplicación]
+  Aplicacion --> Auth[Servicio de Autenticación]
+  Aplicacion --> DB[(Base de datos)]
+```
+
+MCD base:
+
+```mermaid
+erDiagram
+  USUARIO {
+    string id PK
+    string nombre
+    string email
+  }
+  ROL {
+    string id PK
+    string nombre
+  }
+  USUARIO ||--o{ ROL : tiene
+```
+
+### Recursos
+- diagrams.net / draw.io — https://app.diagrams.net/
+- Mermaid Live Editor — https://mermaid.live/
+
+---
